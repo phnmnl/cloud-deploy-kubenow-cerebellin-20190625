@@ -6,22 +6,14 @@ set -eE
 
 function report_err() {
 
-  # post deployment log to slack channel (only if portal deployment)
+  # post message slack channel (only if portal deployment)
   if [[ ! -n "$LOCAL_DEPLOYMENT" ]]; then
 
-    # add some debug info
-    echo "TF_VAR_client_id=$TF_VAR_client_id"
-    echo "TF_VAR_aws_access_key_id=$TF_VAR_aws_access_key_id"
-    echo "OS_PROJECT_ID=$OS_PROJECT_ID"
-    echo "OS_PROJECT_NAME=$OS_PROJECT_NAME"
-    echo "TF_VAR_gce_project=$TF_VAR_gce_project"
-
-    curl -F file="@$PORTAL_DEPLOYMENTS_ROOT/$PORTAL_DEPLOYMENT_REFERENCE/output.log" \
-         -F filename="output-$PORTAL_DEPLOYMENT_REFERENCE.log" \
-         -F filetype="shell" \
+    curl -F text="Portal deployment failed" \
 	     -F channels="portal-deploy-error" \
 	     -F token="$SLACK_ERR_REPORT_TOKEN" \
-	     https://slack.com/api/files.upload
+	     https://slack.com/api/chat.postMessage
+
   fi
 }
 
@@ -217,7 +209,7 @@ ansible-playbook -i "$ansible_inventory_file" \
                  -e "galaxy_include=true" \
                  -e "galaxy_chart_version=0.3.5" \
                  -e "galaxy_hostname=$galaxy_hostname" \
-                 -e "galaxy_image_tag=:v17.09-pheno-lr_cv1.6.175" \
+                 -e "galaxy_image_tag=:dev_v17.09-pheno-lr_cv1.6.190" \
                  -e "galaxy_admin_password=$TF_VAR_galaxy_admin_password" \
                  -e "galaxy_admin_email=$TF_VAR_galaxy_admin_email" \
                  -e "galaxy_pvc=galaxy-pvc" \
