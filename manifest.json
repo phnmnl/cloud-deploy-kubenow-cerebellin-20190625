@@ -1,8 +1,8 @@
 {
-	"applicationName": "Phenomenal VRE 2.0-Cerebellin-20180523",
+	"applicationName": "Phenomenal VRE 2.0-Cerebellin-20181203",
 	"contactEmail": "email@phenomenal.cloud",
 	"about": "Phenomenal Virtual Research Environment",
-	"version": "v2018.02-Cerebellin-20180523",
+	"version": "v2018.02-Cerebellin-20181203",
 	"cloudProviders": [
 		{ "cloudProvider": "AWS", "path": "cloud_portal/aws", "inputs": [ "aws_access_key_id",
                                                                           "aws_secret_access_key",
