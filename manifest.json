@@ -1,50 +1,85 @@
 {
-	"applicationName": "Phenomenal VRE 2.0-Cerebellin-20190625",
-	"contactEmail": "email@phenomenal.cloud",
-	"about": "Phenomenal Virtual Research Environment",
-	"version": "v2018.02-Cerebellin-20190625",
-	"cloudProviders": [
-		{ "cloudProvider": "AWS", "path": "cloud_portal/aws", "inputs": [ "aws_access_key_id",
-                                                                          "aws_secret_access_key",
-                                                                          "aws_region",
-                                                                          "availability_zone",
-                                                                          "master_instance_type",
-                                                                          "node_instance_type",
-                                                                          "edge_instance_typ"
-                                                                        ]
-                },
+  "applicationName": "Phenomenal VRE 2.0-Cerebellin-20190625",
+  "contactEmail": "email@phenomenal.cloud",
+  "about": "Phenomenal Virtual Research Environment",
+  "version": "v2018.02-Cerebellin-20190625",
+  "cloudProviders": [
+    {
+      "cloudProvider": "AWS",
+      "path": "cloud_portal/aws",
+      "inputs": [
+        "aws_access_key_id",
+        "aws_secret_access_key",
+        "aws_region",
+        "availability_zone",
+        "master_instance_type",
+        "node_instance_type",
+        "edge_instance_typ"
+      ]
+    },
+    {
+      "cloudProvider": "OSTACK",
+      "path": "cloud_portal/ostack",
+      "inputs": [
+        "floating_ip_pool",
+        "external_network_uuid",
+        "master_flavor",
+        "node_flavor",
+        "edge_flavor"
+      ]
+    },
+    {
+      "cloudProvider": "GCP",
+      "path": "cloud_portal/gcp",
+      "inputs": [
+        "gce_credentials_file",
+        "gce_project",
+        "gce_zone",
+        "master_flavor",
+        "node_flavor",
+        "edge_flavor"
+      ]
+    }
+  ],
+  "inputs": [
+    "cluster_prefix",
+    "floating_ip_pool",
+    "external_network_uuid",
+    "private_network_name",
+    "use_floating_IPs",
+    "dns_nameservers",
+    "master_as_edge",
+    "master_flavor",
+    "master_flavor_id",
+    "node_count",
+    "node_flavor",
+    "node_flavor_id",
+    "edge_count",
+    "edge_flavor",
+    "edge_flavor_id",
+    "glusternode_flavor",
+    "glusternode_count",
+    "glusternode_extra_disk_size",
+    "use_cloudflare",
+    "cloudflare_email",
+    "cloudflare_token",
+    "cloudflare_domain",
+    "cf_mail",
+    "cf_token",
+    "cf_zone",
+    "preset",
+    "preconfigured",
+    "phenomenal_pvc_size",
+    "galaxy_admin_email",
+    "galaxy_admin_password",
+    "jupyter_password",
+    "dashboard_username",
+    "dashboard_password"
+  ],
+  "outputs": [
 
-		
-		
-		
-		{ "cloudProvider": "OSTACK", "path": "cloud_portal/ostack", "inputs": [ "floating_ip_pool",
-                                                                                "external_network_uuid",
-                                                                                "master_flavor",
-	                                                                            "node_flavor",
-	                                                                            "edge_flavor"
-	                                                                          ]
-		},
-		
-		{ "cloudProvider": "GCP", "path": "cloud_portal/gcp", "inputs": [ "gce_credentials_file",
-                                                                          "gce_project",
-                                                                          "gce_zone",
-                                                                          "master_flavor",
-	                                                                      "node_flavor",
-	                                                                      "edge_flavor"
-	                                                                    ]
-	       }
-	],
-	"inputs": [ "cluster_prefix",
-	            "node_count",
-	            "edge_count",
-	            "cf_mail",
-	            "cf_token",
-	            "cf_zone",
-	            "galaxy_admin_password",
-	            "galaxy_admin_email",
-	            "jupyter_password"
-	            
-	          ],
-	"outputs": [],
-	"volumes": []
+  ],
+  "volumes": [
+
+  ]
 }
