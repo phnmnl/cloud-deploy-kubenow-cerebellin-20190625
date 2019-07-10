@@ -74,7 +74,18 @@
     "galaxy_admin_password",
     "jupyter_password",
     "dashboard_username",
-    "dashboard_password"
+    "dashboard_password",
+    "aws_access_key_id",
+    "aws_secret_access_key",
+    "aws_region",
+    "availability_zone",
+    "master_instance_type",
+    "node_instance_type",    
+    "edge_instance_type",
+    "glusternode_instance_type",
+    "gce_credentials_file",
+    "gce_project",
+    "gce_zone"
   ],
   "outputs": [
 
